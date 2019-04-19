@@ -1,45 +1,7 @@
-#:kivy 1.10.0
-
-<PageLayoutDemo>:
+<Launch>:
     BoxLayout:
-        canvas:
-            Color:
-                rgb: 0, .5, .95, 1
-            Rectangle:
-                pos: self.pos
-                size: self.size
-
-        orientation: "vertical"
         Button:
-            text: "This is a test button"
-            size_hint_y: .4
-        Label:
-            markup: True
-            text: "This is a [b]looooong[/b] text... " * 49
-            color: 0, 0, 0, 1
-            outline_color: 0, 0.5, 0.5, 1
-            font_size: 30
-
-    BoxLayout:
-        orientation: "vertical"
-        canvas:
-            Color:
-                rgba: 109/255., 8/255., 57/255., 1
-            Rectangle:
-                pos: self.pos
-                size: self.size
-        Label:
-            markup: True
-            text: "This is an even [b]looooonger[/b] text... "
-            color: 0, 0, 0, 1
-            outline_color: 0, 0.5, 0.5, 1
-            font_size: 30
-        Button:
-            text: "This is a second test button"
-            size_hint_y: .2
-
-    Button:
-        text: "Page 3"
-
-    Button:
-        text: "Page 4"
+            size:(80,80)
+            size_hint:(None,None)
+            text:"Click me"
+            on_press: root.say_hello()
