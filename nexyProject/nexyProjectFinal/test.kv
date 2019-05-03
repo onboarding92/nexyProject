@@ -60,8 +60,48 @@
 	
 
 <Redirect>
-	BoxLayout:
+	PageLayout:
+		FloatLayout:
+			canvas:
+        		Color:
+            		rgba: 255/255., 255/255., 255/255., 1
+				Rectangle:
+                    pos: self.pos
+                    size: self.size
+			AnchorLayout:
+				anchor_x: 'left'
+				anchor_y: 'top'
+				Image:
+					size_hint: None, None
+					source: 'logo.png'
+			AnchorLayout:
+				anchor_x: 'right'
+				anchor_y: 'top'
+				Image:
+					size_hint: None, None
+					source: 'logo.png'
+			AnchorLayout:
+				anchor_x: 'center'
+				anchor_y: 'top'
+				Label:
+					color: 0, 0, 0, 1
+					size_hint: None, None
+					text: 'Dischovery Menu'
+			AnchorLayout:
+				anchor_x: 'center'
+				anchor_y: 'center'
+				Label:
+					color: 0, 0, 0, 1
+					size_hint: None, None
+					text: 'Dishcovery è il servizio più utilizzato\ndai ristoratori italiani\nper creare pratici ed efficienti\nmenù digitali multi-lingua.\nL’unico capace di raccontare\noltre che tradurre.'
+			AnchorLayout:
+				anchor_x: 'center'
+				anchor_y: 'bottom'
+				Button:
+					size: 200, 100
+					size_hint: None, None
+					text: 'Go to dischovery'
+					on_press: root.redirect()
 		Button:
-			on_press: root.redirect()
-		Button:
+			text: 'Go to the app'
 			on_press: root.next()
