@@ -17,7 +17,7 @@
         id: login_layout
         orientation: 'vertical'
         padding: [10,50,10,50]
-        spacing: 50
+        spacing: 24
 
         Label:
             text: 'Welcome'
@@ -51,10 +51,62 @@
                 password:True
                 font_size: 28
 
+		BoxLayout:
+			orientation: 'vertical'
+            Label:
+                text: 'Telefono'
+                halign: 'left'
+                font_size: 18
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: telefono
+                multiline:False
+                font_size: 28
+
+		BoxLayout:
+			orientation: 'vertical'
+            Label:
+                text: 'Città'
+                halign: 'left'
+                font_size: 18
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: citta
+                multiline:False
+                font_size: 28
+		
+		BoxLayout:
+			orientation: 'vertical'
+            Label:
+                text: 'Via'
+                halign: 'left'
+                font_size: 18
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: via
+                multiline:False
+                font_size: 28
+		
+		BoxLayout:
+			orientation: 'vertical'
+            Label:
+                text: 'Mail'
+                halign: 'left'
+                font_size: 18
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: mail
+                multiline:False
+                font_size: 28
+
         Button:
             text: 'Connexion'
             font_size: 24
-            on_press: root.do_login(login.text, password.text)
+            on_press: root.do_login(login.text, password.text, telefono.text, citta.text, via.text, mail.text)
 
 
 	
@@ -102,6 +154,27 @@
 					size_hint: None, None
 					text: 'Go to dischovery'
 					on_press: root.redirect()
+
+		BoxLayout:
+			orientation: 'vertical'
+			canvas:
+        		Color:
+            		rgba: 255/255., 255/255., 255/255., 1
+				Rectangle:
+                    pos: self.pos
+                    size: self.size
+			
+			ScrollView:
+				halign: 'left'
+				size_hint: 1, None
+				size: root.width, root.height
+				Label:
+					color: 0, 0, 0, 1
+					size_hint: None, None
+					text: 'Dishcovery è il servizio più utilizzato\ndai ristoratori italiani\nper creare pratici ed efficienti\nmenù digitali multi-lingua.\nL’unico capace di raccontare\noltre che tradurre.Dishcovery è il servizio più utilizzato\ndai ristoratori italiani\nper creare pratici ed efficienti\nmenù digitali multi-lingua.\nL’unico capace di raccontare\noltre che tradurre.Dishcovery è il servizio più utilizzato\ndai ristoratori italiani\nper creare pratici ed efficienti\nmenù digitali multi-lingua.\nL’unico capace di raccontare\noltre che tradurre.Dishcovery è il servizio più utilizzato\ndai ristoratori italiani\nper creare pratici ed efficienti\nmenù digitali multi-lingua.\nL’unico capace di raccontare\noltre che tradurre.Dishcovery è il servizio più utilizzato\ndai ristoratori italiani\nper creare pratici ed efficienti\nmenù digitali multi-lingua.\nL’unico capace di raccontare\noltre che tradurre.Dishcovery è il servizio più utilizzato\ndai ristoratori italiani\nper creare pratici ed efficienti\nmenù digitali multi-lingua.\nL’unico capace di raccontare\noltre che tradurre.Dishcovery è il servizio più utilizzato\ndai ristoratori italiani\nper creare pratici ed efficienti\nmenù digitali multi-lingua.\nL’unico capace di raccontare\noltre che tradurre.Dishcovery è il servizio più utilizzato\ndai ristoratori italiani\nper creare pratici ed efficienti\nmenù digitali multi-lingua.\nL’unico capace di raccontare\noltre che tradurre.'
+				
+			
+
 		Button:
 			text: 'Go to the app'
 			on_press: root.next()

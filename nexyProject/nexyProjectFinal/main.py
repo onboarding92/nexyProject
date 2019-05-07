@@ -22,14 +22,20 @@ class Redirect(Screen):
 		self.manager.current = 'login'
 
 class Login(Screen):
-	def do_login(self, loginText, passwordText):
+	def do_login(self, loginText, passwordText, telefonoText, cittaText, viaText, mailText):
 		app = App.get_running_app()
 
 		app.username = loginText
 		app.password = passwordText
+		app.telefono = telefonoText
+		app.città = cittaText
+		app.via = viaText
+		app.mail = mailText
 
 		self.manager.transition = SlideTransition(direction="left")
 		self.manager.current = 'connected'
+
+		print(app.username, app.password, app.telefono, app.città, app.via, app.mail)
 
 		app.config.read(app.get_application_config())
 		app.config.write()
@@ -37,13 +43,20 @@ class Login(Screen):
 	def resetForm(self):
 		self.ids['login'].text = ""
 		self.ids['password'].text = ""
-
+		self.ids['telefono'].text = ""
+		self.ids['citta'].text = ""
+		self.ids['via'].text = ""
+		self.ids['mail'].text = ""
 
 
 class App(App):
 		
 	username = StringProperty(None)
 	password = StringProperty(None)
+	telefono = StringProperty(None)
+	citta = StringProperty(None)
+	via = StringProperty(None)
+	mail = StringProperty(None)
 
 
 	def build(self):
